@@ -43,5 +43,8 @@ declare module '@nozbe/watermelondb/adapters/type' {
 
     // Do not use — only for testing purposes
     unsafeClearCachedRecords(): Promise<void>
+
+    // Fetches matching records without touching cache
+    unsafeQueryRaw<T extends Model>(query: Query<T>): Promise<any[]>
   }
 }
